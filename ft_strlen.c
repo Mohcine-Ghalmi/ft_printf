@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 10:36:54 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 14:50:55 by mghalmi          ###   ########.fr       */
+/*   Created: 2022/11/13 14:58:05 by mghalmi           #+#    #+#             */
+/*   Updated: 2022/11/13 14:58:11 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdlib.h>
 
-void	ft_puthex(size_t n)
+size_t	ft_strlen(const char *s)
 {
-	char hex[] = "0123456789abcdef";
-	if (n >= 16)
-	{
-		ft_puthex(n / 16);
-		ft_puthex(n % 16);
-	}
-	else if (n < 16)
-		ft_putchar(hex[n]);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	i++;
+	return (i);
 }
