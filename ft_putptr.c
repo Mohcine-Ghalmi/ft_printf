@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:14:46 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 15:16:36 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:15:03 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void    ft_putptr(void *nbr)
 {
     ft_putstr("0x");
-    ft_puthex(nbr);
+    ft_puthex((unsigned int)nbr);
 }
