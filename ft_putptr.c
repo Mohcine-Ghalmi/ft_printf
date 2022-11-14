@@ -6,14 +6,18 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:14:46 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 16:15:03 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:15:27 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putptr(void *nbr)
+int    ft_putptr(void *nbr)
 {
-    ft_putstr("0x");
-    ft_puthex((unsigned int)nbr);
+    int count;
+
+    count = 0;
+    count += ft_putstr("0x");
+    count += ft_puthex((unsigned int)nbr);
+    return (count);
 }

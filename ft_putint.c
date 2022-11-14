@@ -6,16 +6,18 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:30:11 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 14:15:36 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:14:41 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putint(int nbr)
+int	ft_putint(int nbr)
 {
+	int count;
 	unsigned int x;
 
+	count = 0;
 	if (nbr < 0)
 	{
 		ft_putchar('-');
@@ -25,5 +27,6 @@ void	ft_putint(int nbr)
 		x = (unsigned int)nbr;
 	if (nbr >= 10)
 		ft_putint(nbr / 10);
-	ft_putchar((char)(nbr % 10 + 48));
+	count += ft_putchar((char)(nbr % 10 + 48));
+	return (count);
 }

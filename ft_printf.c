@@ -6,63 +6,63 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:19:21 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 16:27:20 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:29:47 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-void	ft_output(va_list arg, const char *input, int i)
+int	ft_output(va_list arg, const char *input, int i)
 {
-		if (input[i] == '%')
-			ft_putchar(input[i]);
-		else if (input[i] == 'c')
-			ft_putchar(va_arg(arg, int));
-		else if (input[i] == 's')
-			ft_putstr(va_arg(arg, char *));
-		else if (input[i] == 'p')
-			ft_putptr(va_arg(arg, void *));
-		else if (input[i] == 'i' || input[i] == 'd')
-			ft_putint(va_arg(arg, int));
-		else if (input[i] == 'u')
-			ft_putuint(va_arg(arg, unsigned int));
-		else if (input[i] == 'x')
-			ft_puthex(va_arg(arg, unsigned int));
-		else if (input[i] == 'X')
-			ft_putuphex(va_arg(arg, unsigned int));
+	int count;
+
+	count = 0;
+	if (input[i] == '%')
+		count += ft_putchar(input[i]);
+	else if (input[i] == 'c')
+		count += ft_putchar(va_arg(arg, int));
+	else if (input[i] == 's')
+		count += ft_putstr(va_arg(arg,char *));
+	else if (input[i] == 'p')
+		count += ft_putptr(va_arg(arg, void *));
+	else if (input[i] == 'i' || input[i] == 'd')
+		count += ft_putint(va_arg(arg, int));
+	else if (input[i] == 'u')
+		count += ft_putuint(va_arg(arg, unsigned int));
+	else if (input[i] == 'x')
+		count += ft_puthex(va_arg(arg, unsigned int));
+	else if (input[i] == 'X')
+		count += ft_putuphex(va_arg(arg, unsigned int));
+	else
+		count += ft_putchar(input[i]);
+	return (count);
 }
 
 int ft_printf(const char *input, ...)
 {
 	va_list arg;
 	int     i;
-	int		count;
-	int		j;
-
+	int 	len;
+	
 	va_start(arg, input);
-	count = 0;
 	i = 0;
-	j = 0;
-	while (input[i] && i < ft_strlen(input))
+	len = 0;
+	while (input[i])
 	{
 		if (input[i] != '%')
-			i++;
-		else if (i < ft_strlen(input))
-			ft_output(arg, input, i++);
-		count++;
-		if (input[count - 1] == '%')
+			len += ft_putchar(input[i++]);
+		if (input[i++] == '%')
 		{
-			if (input[count - 1] == input[count])
-				j++;
+			len += ft_output(arg, input, i);
+			i++;
 		}
 	}
 	va_end(arg);
-	return (i - j);
+	return (len);
 }
 
 int main()
 {
-	int a = 5;
-
-	ft_printf("%d" , a);
+	ft_printf("mochine");
 }

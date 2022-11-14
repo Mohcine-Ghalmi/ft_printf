@@ -6,13 +6,14 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:24:53 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 16:09:58 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:12:07 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(int c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }

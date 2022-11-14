@@ -6,20 +6,25 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:36:54 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/13 16:11:36 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:22:15 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthex(unsigned int n)
+int	ft_puthex(unsigned int n)
 {
-	char hex[] = "0123456789abcdef";
+	int count;
+	char *hex;
+
+	count = 0;
+	hex = "0123456789abcdef";
 	if (n >= 16)
 	{
 		ft_puthex(n / 16);
 		ft_puthex(n % 16);
 	}
 	else if (n < 16)
-		ft_putchar(hex[n]);
+		count += ft_putchar(hex[n]);
+	return (count);
 }
