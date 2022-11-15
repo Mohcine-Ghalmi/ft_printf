@@ -6,7 +6,7 @@
 /*   By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 10:19:21 by mghalmi           #+#    #+#             */
-/*   Updated: 2022/11/14 18:29:47 by mghalmi          ###   ########.fr       */
+/*   Updated: 2022/11/15 14:39:08 by mghalmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_output(va_list arg, const char *input, int i)
 	else if (input[i] == 'u')
 		count += ft_putuint(va_arg(arg, unsigned int));
 	else if (input[i] == 'x')
-		count += ft_puthex(va_arg(arg, unsigned long long));
+		count += ft_puthex(va_arg(arg, unsigned int));
 	else if (input[i] == 'X')
 		count += ft_putuphex(va_arg(arg, unsigned int));
 	return (count);
