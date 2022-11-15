@@ -53,7 +53,7 @@ int	ft_printf(const char *input, ...)
 		{
 			++i;
 			if (!input[i])
-				return (0);
+				return (len);
 			len += ft_output(arg, input, i++);
 		}
 	}
