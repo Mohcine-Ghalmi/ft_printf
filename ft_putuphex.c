@@ -14,15 +14,15 @@
 
 int	ft_putuphex(unsigned int n)
 {
-	char *hex;
-	int count;
+	char	*hex;
+	int		count;
 
 	hex = "0123456789abcdef";
 	count = 0;
 	if (n >= 16)
 	{
-		ft_putuphex(n / 16);
-		ft_putuphex(n % 16);
+		count += ft_putuphex(n / 16);
+		count += ft_putuphex(n % 16);
 	}
 	else if (n < 16)
 		count += ft_putchar(hex[n]);

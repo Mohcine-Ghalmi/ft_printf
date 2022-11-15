@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-int    ft_putptr(void *nbr)
+int	ft_putptr(void *nbr)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    count += ft_putstr("0x");
-    count += ft_puthex((unsigned int)nbr);
-    return (count);
+	count = 0;
+	count += ft_putstr("0x");
+	count += ft_puthex((unsigned long long)nbr);
+	return (count);
 }

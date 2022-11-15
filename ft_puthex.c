@@ -12,17 +12,17 @@
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned int n)
+int	ft_puthex(unsigned long long n)
 {
-	int count;
-	char *hex;
+	int		count;
+	char	*hex;
 
 	count = 0;
 	hex = "0123456789abcdef";
 	if (n >= 16)
 	{
-		ft_puthex(n / 16);
-		ft_puthex(n % 16);
+		count += ft_puthex(n / 16);
+		count += ft_puthex(n % 16);
 	}
 	else if (n < 16)
 		count += ft_putchar(hex[n]);

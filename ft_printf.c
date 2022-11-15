@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_output(va_list arg, const char *input, int i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (input[i] == '%')
@@ -23,7 +22,7 @@ int	ft_output(va_list arg, const char *input, int i)
 	else if (input[i] == 'c')
 		count += ft_putchar(va_arg(arg, int));
 	else if (input[i] == 's')
-		count += ft_putstr(va_arg(arg,char *));
+		count += ft_putstr(va_arg(arg, char *));
 	else if (input[i] == 'p')
 		count += ft_putptr(va_arg(arg, void *));
 	else if (input[i] == 'i' || input[i] == 'd')
@@ -31,20 +30,18 @@ int	ft_output(va_list arg, const char *input, int i)
 	else if (input[i] == 'u')
 		count += ft_putuint(va_arg(arg, unsigned int));
 	else if (input[i] == 'x')
-		count += ft_puthex(va_arg(arg, unsigned int));
+		count += ft_puthex(va_arg(arg, unsigned long long));
 	else if (input[i] == 'X')
 		count += ft_putuphex(va_arg(arg, unsigned int));
-	else
-		count += ft_putchar(input[i]);
 	return (count);
 }
 
-int ft_printf(const char *input, ...)
+int	ft_printf(const char *input, ...)
 {
-	va_list arg;
-	int     i;
-	int 	len;
-	
+	va_list	arg;
+	int		i;
+	int		len;
+
 	va_start(arg, input);
 	i = 0;
 	len = 0;
@@ -52,17 +49,14 @@ int ft_printf(const char *input, ...)
 	{
 		if (input[i] != '%')
 			len += ft_putchar(input[i++]);
-		if (input[i++] == '%')
+		if (input[i] == '%')
 		{
-			len += ft_output(arg, input, i);
-			i++;
+			++i;
+			if (!input[i])
+				return (0);
+			len += ft_output(arg, input, i++);
 		}
 	}
 	va_end(arg);
 	return (len);
-}
-
-int main()
-{
-	ft_printf("mochine");
 }

@@ -17,16 +17,16 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdarg.h>
+# include <stdio.h>
 
-int    ft_putchar(int c);
+int		ft_putchar(int c);
 int		ft_putstr(const char *str);
 int		ft_putint(int nbr);
-int		ft_puthex(unsigned int n);
+int		ft_puthex(unsigned long long n);
 int		ft_putuint(size_t nbr);
-int     ft_putptr(void *nbr);
-size_t	ft_strlen(const char *s);
-int 	ft_putuphex(unsigned int n);
-int     ft_printf(const char *input, ...);
-int 	ft_output(va_list arg, const char *input, int i);
+int		ft_putptr(void *nbr);
+int		ft_putuphex(unsigned int n);
+int		ft_printf(const char *input, ...);
+int		ft_output(va_list arg, const char *input, int i);
 
-# endif
+#endif

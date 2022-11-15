@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-int    ft_putuint(size_t nbr)
+int	ft_putuint(size_t nbr)
 {
-	int count;
+	int	count;
 
 	count = 0;
-    if (nbr >= 10)
-		ft_putuint(nbr / 10);
-	count += ft_putchar((char)(nbr % 10 + 48));
+	if (nbr >= 10)
+		count += ft_putuint(nbr / 10);
+	count += ft_putchar(nbr % 10 + 48);
 	return (count);
 }

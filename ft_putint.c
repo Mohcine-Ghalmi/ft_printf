@@ -14,19 +14,19 @@
 
 int	ft_putint(int nbr)
 {
-	int count;
-	unsigned int x;
+	int				count;
+	unsigned int	x;
 
 	count = 0;
 	if (nbr < 0)
 	{
-		ft_putchar('-');
+		count += ft_putchar('-');
 		x = (unsigned int)(nbr * -1);
 	}
 	else
 		x = (unsigned int)nbr;
-	if (nbr >= 10)
-		ft_putint(nbr / 10);
-	count += ft_putchar((char)(nbr % 10 + 48));
+	if (x >= 10)
+		count += ft_putint(x / 10);
+	count += ft_putchar(x % 10 + 48);
 	return (count);
 }

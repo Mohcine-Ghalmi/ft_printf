@@ -12,12 +12,12 @@
 
 NAME = libftprintf.a
 
-SCRS =  ft_puthex.c   ft_putptr.c   ft_putuint.c  ft_strlen.c \
+SCRS =  ft_puthex.c   ft_putptr.c   ft_putuint.c   \
 		ft_printf.c   ft_putchar.c  ft_putint.c   ft_putstr.c   ft_putuphex.c
 
 INLUDE = ft_printf.h
 
-OBJ = $(SRCS:.c=.o)
+OBJ = $(SCRS:.c=.o)
 
 all : $(NAME)
 
