@@ -33,6 +33,8 @@ int	ft_output(va_list arg, const char *input, int i)
 		count += ft_puthex(va_arg(arg, unsigned int));
 	else if (input[i] == 'X')
 		count += ft_putuphex(va_arg(arg, unsigned int));
+	else
+		count += ft_putchar(input[i]);
 	return (count);
 }
 
