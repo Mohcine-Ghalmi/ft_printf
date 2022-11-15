@@ -6,7 +6,7 @@
 #    By: mghalmi <mghalmi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 17:57:44 by mghalmi           #+#    #+#              #
-#    Updated: 2022/11/14 17:57:45 by mghalmi          ###   ########.fr        #
+#    Updated: 2022/11/15 15:45:57 by mghalmi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ SCRS =  ft_puthex.c   ft_putptr.c   ft_putuint.c   \
 INLUDE = ft_printf.h
 
 OBJ = $(SCRS:.c=.o)
+
+CFLAGS = -Werror -Wall -Wextra
 
 all : $(NAME)
 
