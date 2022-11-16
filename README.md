@@ -1,4 +1,6 @@
 # ft_printf
+![image](https://user-images.githubusercontent.com/81354228/202187330-73bfcd5e-fec0-4f14-a555-b99a1c1b63ca.png)
+
 
 ## 🗣️ About:
 
@@ -19,6 +21,8 @@ The versatility of the printf function in C represents a great exercise in progr
 
 # Badge 
 ![image](https://github.com/mcombeau/mcombeau/blob/main/42_badges/ft_printfe.png)
+<br/>
+![image](https://user-images.githubusercontent.com/81354228/202187202-a9ae9246-8950-447c-94d7-5915c290fef6.png)
 # :bookmark_tabs: Mandatory part
 
 - [x] It must not do the buffer management like the real printf.
