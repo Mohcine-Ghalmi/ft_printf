@@ -17,6 +17,8 @@ The versatility of the printf function in C represents a great exercise in progr
 
 ---
 
+# Badge 
+![image](https://github.com/mcombeau/mcombeau/blob/main/42_badges/ft_printfe.png)
 # :bookmark_tabs: Mandatory part
 
 - [x] It must not do the buffer management like the real printf.
